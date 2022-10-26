@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[controladorGit::class, 'welcome']);
-Route::get('formulario',[controladorGit::class, 'Formulario'])->name('form');
+Route::get('/',[controladorGit::class, 'Formulario'])->name('form');
 Route::get('tabla',[controladorGit::class, 'Tabla'])->name('tab');
 
 

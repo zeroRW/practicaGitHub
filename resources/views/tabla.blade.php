@@ -6,7 +6,7 @@
 
     <br>
 
-    <div class="container col-md-10 offset-md-2 mb-5">
+    <div class="container col-md-8  offset-md-2 mb-5">
         <div class="card text-left mb-4 border">
             <div class="card-body">
                 <h1 class="mb-4"> Tabla </h1>
