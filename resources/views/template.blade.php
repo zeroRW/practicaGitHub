@@ -28,7 +28,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link fst-italic" style="color: white" href="{{route('form')}}">Formulario</a>
+                <a class="nav-link fst-italic" style="color: white" href="{{route('form')}}">form</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link fst-italic" style="color: white" href="{{route('tab')}}">Tabla</a>
@@ -37,6 +37,8 @@
           </div>
         </div>
       </nav>
+
+      
 
     <!--Desarrollo-->
     @yield('desarrollo')
