@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\controladorGit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[controladorGit::class, 'welcome']);
+Route::get('formulario',[controladorGit::class, 'Formulario'])->name('form');
+Route::get('tabla',[controladorGit::class, 'Tabla'])->name('tab');
+
+
+Route::post('registrar',[controladorGit::class, 'procesarFormulario'])->name('guardar');
