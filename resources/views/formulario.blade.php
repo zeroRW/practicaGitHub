@@ -2,6 +2,21 @@
 
 @section('desarrollo')
 
+@if (session()->has('correcto'))
+{!!
+    "<script>
+        Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Registro correcto',
+        showConfirmButton: false,
+        timer: 1500
+    })
+    </script>"
+!!}
+@endif
+
+
 <div class="container col-md-8 offset-md-2">
     <br>
     <div class="card text-left mb-5 border">
@@ -13,10 +28,6 @@
 
                 @if ($errors->any())
                     @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>{{$error}}</strong>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
                     @endforeach
                 @endif
 
@@ -26,21 +37,31 @@
                 @csrf
                     <div class="col-12">
                     <input type="text" class="form-control" name="txtUsuario" placeholder="Nombre usuario" value="{{old('txtUsuario')}}">
-                    </div>
-
-                    <div class="col-12">
+                    <p class="fst-italic" style="color: red">
+                        {{$errors->first('txtUsuario')}}
+                    </p>
+                    <!--</div>-->
+                
+                    <!--<div class="col-12">-->
                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Corre</label>
                     <div class="input-group">
                         <div class="input-group-text">@</div>
                         <input type="email" class="form-control" id="inlineFormInputGroupUsername" name="txtCorreo" placeholder="Correo..." value="{{old('txtCorreo')}}">
+                        
                     </div>
-                    </div>
+                    <p class="fst-italic" style="color: red">
+                        {{$errors->first('txtCorreo')}}
+                    </p>
+                    <!--</div>-->
                 
-                    <div class="col-12">
+                    <!--<div class="col-12">-->
                     <input type="password" class="form-control" name="txtContra" placeholder="Contraseña" value="{{old('txtContra')}}">
-                    </div>
+                    <p class="fst-italic" style="color: red">
+                        {{$errors->first('txtContra')}}
+                    </p>
+                    <!--</div>-->
                 
-                    <div class="col-12">
+                    <!--<div class="col-12">-->
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="inlineFormCheck">
                         <label class="form-check-label" for="inlineFormCheck">

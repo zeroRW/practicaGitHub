@@ -9,7 +9,7 @@ class controladorGit extends Controller
 {
     public function procesarFormulario(validarGit $req){
 
-        return redirect('formulario')->with('confirmacion','ejecucion correcta');
+        return redirect('/')->with('correcto','incorrecto');
 
     }
 
@@ -21,7 +21,5 @@ class controladorGit extends Controller
         return view('tabla');
     }
 
-    public function welcome(){
-        return view('welcome');
-    }
+
 }
