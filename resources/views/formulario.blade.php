@@ -5,13 +5,11 @@
 @if (session()->has('correcto'))
 {!!
     "<script>
-        Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Registro correcto',
-        showConfirmButton: false,
-        timer: 1500
-    })
+        Swal.fire(
+        'Registro Correcto!',
+        'Se almaceno en la Base de datos',
+        'success'
+)
     </script>"
 !!}
 @endif
@@ -36,7 +34,7 @@
             <form class="row row-cols-lg-auto g-3 align-items-center" action="registrar" method="POST">
                 @csrf
                     <div class="col-12">
-                    <input type="text" class="form-control" name="txtUsuario" placeholder="Nombre usuario" value="{{old('txtUsuario')}}">
+                    <input type="text" class="form-control" name="txtUsuario" id="nombre" placeholder="Nombre usuario" value="{{old('txtUsuario')}}">
                     <p class="fst-italic" style="color: red">
                         {{$errors->first('txtUsuario')}}
                     </p>
